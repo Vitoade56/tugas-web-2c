@@ -1,0 +1,244 @@
+/* --- 1. GLOBAL STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5dcff;
+    color: #480b5a;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- 2. HEADER & NAVIGASI --- */
+header {
+    background-color: #4d1158; 
+    color: #ffffff;
+    padding-top: 2.5rem;
+}
+
+.kotak-profil {
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 2rem;
+}
+
+.kotak-profil h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.kotak-profil p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+}
+
+nav {
+    background-color: #ad4fca;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.daftar-menu {
+    list-style: none;
+    display: flex; /* Flexbox untuk Navigasi */
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.daftar-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.daftar-menu li a:hover {
+    color: #bc66c8;
+}
+
+/* --- 3. MAIN CONTENT & FLEXBOX LAYOUT --- */
+main {
+    display: flex; /* Flexbox Utama (Kotak Kiri & Aside Kanan) */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* Kolom Kiri (Artikel) */
+#konten-utama {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.kotak.article {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #480b5a;
+}
+
+.kotak.article h2 {
+    color: #480b5a;
+    margin-bottom: 15px;
+    border-bottom: 2px dashed #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.kotak.article h4 {
+    margin-top: 20px;
+    color: #2d3748;
+}
+
+.kotak.article p {
+    text-align: justify;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+/* Tombol Link */
+a.foto.proyek, a.link.sertifikat {
+    display: inline-block;
+    background-color: #480b5a;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 15px;
+}
+
+a.foto.proyek:hover, a.link.sertifikat:hover {
+    background-color: #1a365d;
+    transform: translateY(-2px);
+}
+
+/* --- 4. ASIDE (PROFIL BIODATA) KANAN --- */
+aside.profil-biodata {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #480b5a;
+}
+
+aside.profil-biodata h2 {
+    text-align: center;
+    color: #480b5a;
+    margin-bottom: 20px;
+}
+
+/* Styling Gambar Profil di dalam Aside */
+.kotak-foto {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.kotak-foto img.foto {
+    width: 170px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15%;
+    border: 5px solid #edf2f7;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+aside.profil-biodata h3 {
+    text-align: center;
+    color: #2d3748;
+    margin-bottom: 5px;
+}
+
+aside.profil-biodata .teks {
+    text-align: center;
+    color: #040404;
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+/* Styling Tabel Biodata */
+.tabel-profil-biodata {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+.tabel-profil-biodata th, .tabel-profil-biodata td {
+    padding: 10px 0;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 0.95rem;
+}
+
+.tabel-profil-biodata th {
+    text-align: left;
+    color: #4a5568;
+    width: 45%;
+}
+
+.tabel-profil-biodata td {
+    color: #2d3748;
+    font-weight: 500;
+}
+
+aside.profil-biodata h4 {
+    color: #480b5a;
+    margin-bottom: 10px;
+}
+
+aside.profil-biodata p {
+    text-align: justify;
+    font-size: 0.95rem;
+    color: #030303;
+}
+
+/* --- 5. FOOTER --- */
+footer {
+    background-color: #bc66c8;
+    color: #feffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+/* --- 6. MEDIA QUERY (RESPONSIF) --- */
+@media screen and (max-width: 900px) {
+    main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    aside, #konten-utama {
+        width: 100%;
+    }
+
+    .daftar-menu {
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 10px;
+    }
+}
