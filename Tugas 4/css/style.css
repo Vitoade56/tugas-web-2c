@@ -1,0 +1,15 @@
+/* memberikan warna merah untuk elemen h1 */
+h1 {
+    color: red;
+    font-size: 30px;
+}
+/* untuk h2 warna biru font 25px */
+h2 {
+    color: blue;
+    font-size: 25px;
+}
+/* untuk elemen p warna hijau font 20px */
+p {
+    color: green;
+    font-size: 20px;
+}
