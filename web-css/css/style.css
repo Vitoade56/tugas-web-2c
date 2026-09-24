@@ -1,0 +1,31 @@
+/* untuk body gunakan warna abu ukuran font 16 arial sans serif */
+body {
+    background-color: grey;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+/* untuk container gunakan warna putih dengan width 800px dan margin auto */
+.container {
+    background-color: white;
+    width: 800px;
+    margin: auto;
+}
+
+/* mengatur jarak dalam header padding top 20.pading right 20 dan padding lef 20 */
+header {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/* untuk header. judul */
+.header .judul {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Bagian NAV */
+.nav {
+    padding: 0px;
+}
