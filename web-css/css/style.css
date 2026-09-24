@@ -1,31 +1,102 @@
-/* untuk body gunakan warna abu ukuran font 16 arial sans serif */
-body {
-    background-color: grey;
+body{
+    background-color: gray;
     font-size: 16px;
     font-family: Arial, sans-serif;
 }
-/* untuk container gunakan warna putih dengan width 800px dan margin auto */
-.container {
+
+.container{
     background-color: white;
-    width: 800px;
+    width: 1000px;
     margin: auto;
 }
 
-/* mengatur jarak dalam header padding top 20.pading right 20 dan padding lef 20 */
-header {
+/* mengatur jarak dalam header padding top 20, padding right 20 dan padding left 20  */
+header{
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
 }
 
-/* untuk header. judul */
-.header .judul {
+/* untuk header judul gunakan ukuran font 40px,tebal dan margin dibawah bottom 5px  */
+.header .judul{
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 5px;
 }
-
-/* Bagian NAV */
-.nav {
+ 
+/* Mengatur display inline-black agar bisa diberikan dimensi  */
+nav{
     padding: 0px;
+}
+
+.nav li{
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+/*menghilangkan garis bawah link*/
+.nav li a {
+    text-decoration: none;
+    color: navy;
+}
+ 
+/*ketika navigasi disorot mouse*/
+.nav li a:hover {
+    background-color: lightblue;
+    color: white;
+}
+
+/*untuk css baner*/
+.banner {
+    height: 300px;
+    /*background-color: skyblue;*/
+    /*berikan file gambar*/
+    background-image: url(../img/banner.jpg);
+    /*atur ukuran gambar*/
+    background-size: cover;
+    /*mengatur posisi gambar horisontal dan vertikal*/
+    background-position: 0px -150px;
+    /*mengatur garis tepi tebal jenis warna*/
+    border-top: 5px solid navy;
+    border-bottom: 5px solid skyblue;
+}
+
+/*untuk isi*/
+.isi {
+    padding: 20px;
+}
+ 
+.isi h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+ 
+.isi .penulis {
+    font-size: 14px;
+    /*agar agak naik*/
+    margin-top: -10px;
+}
+ 
+.isi .penulis a {
+    text-decoration: none;
+    color: skyblue;
+}
+ 
+.isi p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/*untuk footer*/
+.footer {
+    background-color: navy;
+    height: 50px;
+    padding: 2px;
+}
+ 
+.footer .copyright {
+    font-size: 16px;
+    color: white;
+    text-align: center;
 }
