@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vito Ade. - Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#111827',
+                        primary: '#10b981', // Emerald
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background Glows */
+        .glow-bg {
+            position: absolute;
+            z-index: -1;
+            filter: blur(120px);
+            opacity: 0.5;
+            border-radius: 50%;
+        }
+        .glow-left {
+            top: -10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vh;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.4), transparent 70%);
+        }
+        .glow-right {
+            top: 10%;
+            right: -10%;
+            width: 50vw;
+            height: 50vh;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent 70%);
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+        }
+
+        /* Tech Stack Card Hover */
+        .tech-card {
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Custom Inputs */
+        .custom-input {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        .custom-input:focus {
+            background: rgba(0, 0, 0, 0.4);
+            border-color: #10b981;
+            box-shadow: none;
+            color: white;
+        }
+
+        /* Hide Scrollbar for Horizontal Nav on Mobile */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased relative">
+
+    <!-- Background Glows -->
+    <div class="glow-bg glow-left"></div>
+    <div class="glow-bg glow-right"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-transparent pt-4 pb-2">
+        <div class="container d-flex justify-content-between align-items-center flex-nowrap">
+            <a class="navbar-brand fw-bold fs-4 me-4" href="#">Portofolio.</a>
+            
+            <div class="overflow-x-auto no-scrollbar w-100 d-flex justify-content-md-end justify-content-start">
+                <ul class="navbar-nav flex-row align-items-center gap-3 md:gap-4 mb-0">
+                    <li class="nav-item"><a class="nav-link text-white text-xs md:text-base whitespace-nowrap" href="#">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link text-gray-400 hover:text-white text-xs md:text-base whitespace-nowrap" href="#about">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link text-gray-400 hover:text-white text-xs md:text-base whitespace-nowrap" href="#projects">Proyek</a></li>
+                    <li class="nav-item"><a class="nav-link text-gray-400 hover:text-white text-xs md:text-base whitespace-nowrap" href="#contact">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link text-gray-400 hover:text-white text-xs md:text-base whitespace-nowrap" href="#certificates">Sertifikat</a></li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-sm btn-outline-light rounded-pill px-2 px-md-3 text-xs md:text-sm d-flex align-items-center"><i class="fa-solid fa-globe me-1"></i> ID</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container min-vh-100 d-flex align-items-center py-5">
+        <div class="row w-100 align-items-center">
+            <!-- Left Content -->
+            <div class="col-lg-7 mb-5 mb-lg-0">
+                <p class="text-white-400 tracking-widest text-sm mb-2 uppercase">Halo, Saya</p>
+                <h1 class="display-3 fw-bold mb-3 leading-tight">Vito Ade <br> Chrisnanta</h1>
+                <h2 class="h4 text-white-300 mb-4 fw-light">Seorang <span class="fw-bold text-white">Mahasiswa Sistem Informasi</span></h2>
+                
+                <!-- Social Icons -->
+                <div class="d-flex gap-3 mb-4">
+                    <a href="#" class="text-gray-400 hover:text-white fs-5"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Vitoade56" class="text-gray-400 hover:text-white fs-5"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/vtoad_?stkn=M2VuZXFrZ3NzemFp" class="text-gray-400 hover:text-white fs-5"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+
+                <p class="text-white-400 mb-5 max-w-md">Saya membantu bisnis dan individu mengubah ide menjadi solusi digital yang indah dan berfungsi.</p>
+                
+                <!-- Action CTA Buttons -->
+                <div class="flex flex-wrap items-center gap-4 pt-4">
+                    <a href="#projects" class="px-6 py-3.5 rounded-full bg-white text-black font-bold text-sm hover:bg-gray-200 transition flex items-center gap-2 group">
+                        <span data-id="Lihat Proyek" data-en="View Projects">Lihat Proyek</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#contact" class="px-6 py-3.5 rounded-full bg-cardbg border border-cardborder text-white font-medium text-sm hover:border-purple-500 hover:bg-purple-500/10 transition" data-id="Kontak Saya" data-en="Contact Me">
+                        Kontak Saya
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Image Card -->
+            <div class="col-lg-5">
+                <div class="glass-card p-3 position-relative overflow-hidden group">
+                    <img src="img/foto.jpeg" alt="Vito" class="img-fluid rounded-2xl w-100 object-cover" style="height: 500px;">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-gradient-to-t from-black to-transparent rounded-bottom-2xl">
+                        <div class="d-flex justify-content-between align-items-end">
+                            <div>
+                                <h3 class="h5 mb-1 fw-bold">Vito Ade</h3>
+                                <p class="text-gray-300 text-sm mb-0">Software Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container py-5 mt-5">
+        <div class="glass-card p-5">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4 mb-lg-0 text-center">
+                    <!-- Polaroid Style Image -->
+                    <div class="d-inline-block bg-white p-2 pb-5 transform -rotate-3 shadow-lg rounded-sm">
+                        <img src="img/foto2.jpeg" alt="About" class="img-fluid w-52 h-52 object-cover grayscale">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <h2 class="display-6 fw-bold mb-1">Tentang Saya</h2>
+                    <p class="text-gray-400 italic mb-4">Perpaduan logika kode dan estetika desain.</p>
+                    <p class="text-gray-300 mb-3 text-sm leading-relaxed">
+                        Perjalanan saya di dunia digital dimulai sejak bangku SMK. Sebagai seorang pembelajar otodidak, saya terbiasa memecahkan masalah secara mandiri. Bagi saya, coding adalah seni menyusun logika yang hidup.
+                    </p>
+                    <p class="text-gray-300 mb-5 text-sm leading-relaxed">
+                        Saat ini, saya menempuh pendidikan Sistem Informasi di Universitas Nusantara PGRI Kediri. Kombinasi kemampuan teknis dan komunikasi adalah kekuatan utama saya dalam setiap proyek.
+                    </p>
+                    
+                    <div class="row text-center mb-4">
+                        <div class="col-4">
+                            <h3 class="fs-2 fw-bold text-white mb-0">2+</h3>
+                            <p class="text-gray-400 text-xs text-uppercase mt-1">Tahun Pengalaman</p>
+                        </div>
+                        <div class="col-4">
+                            <h3 class="fs-2 fw-bold text-white mb-0">5+</h3>
+                            <p class="text-gray-400 text-xs text-uppercase mt-1">Proyek Selesai</p>
+                        </div>
+                        <div class="col-4">
+                            <h3 class="fs-2 fw-bold text-white mb-0">10+</h3>
+                            <p class="text-gray-400 text-xs text-uppercase mt-1">Klien Puas</p>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-outline-light rounded-pill px-4 py-2">Unduh CV <i class="fa-solid fa-download ms-2"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="container py-5 mt-5 text-center">
+        <h2 class="h3 fw-bold mb-5">Creative & Tech Stack</h2>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            <div class="tech-card rounded-xl p-3 d-flex flex-column align-items-center justify-content-center" style="width: 120px;">
+                <i class="fa-brands fa-react fs-2 text-info mb-2"></i>
+                <span class="text-xs text-gray-400">React</span>
+            </div>
+            <div class="tech-card rounded-xl p-3 d-flex flex-column align-items-center justify-content-center" style="width: 120px;">
+                <i class="fa-brands fa-css3-alt fs-2 text-primary mb-2"></i>
+                <span class="text-xs text-gray-400">Tailwind</span>
+            </div>
+            <div class="tech-card rounded-xl p-3 d-flex flex-column align-items-center justify-content-center" style="width: 120px;">
+                <i class="fa-solid fa-fire fs-2 text-warning mb-2"></i>
+                <span class="text-xs text-gray-400">Firebase</span>
+            </div>
+            <div class="tech-card rounded-xl p-3 d-flex flex-column align-items-center justify-content-center" style="width: 120px;">
+                <i class="fa-brands fa-node-js fs-2 text-success mb-2"></i>
+                <span class="text-xs text-gray-400">Next.js</span>
+            </div>
+            <div class="tech-card rounded-xl p-3 d-flex flex-column align-items-center justify-content-center" style="width: 120px;">
+                <i class="fa-solid fa-code fs-2 text-info mb-2"></i>
+                <span class="text-xs text-gray-400">VS Code</span>
+            </div>
+            <div class="tech-card rounded-xl p-3 d-flex flex-column align-items-center justify-content-center" style="width: 120px;">
+                <i class="fa-brands fa-github fs-2 text-white mb-2"></i>
+                <span class="text-xs text-gray-400">Git/Github</span>
+            </div>
+            <div class="tech-card rounded-xl p-3 d-flex flex-column align-items-center justify-content-center" style="width: 120px;">
+                <i class="fa-brands fa-figma fs-2 text-danger mb-2"></i>
+                <span class="text-xs text-gray-400">Figma</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates / Sertifikat Section -->
+    <section id="certificates" class="container py-5 mt-5 text-center">
+        <h2 class="h3 fw-bold mb-2">Sertifikat</h2>
+        <p class="text-gray-400 mb-4">Pencapaian dan sertifikasi profesional yang telah saya raih. <br class="d-md-none"><span class="text-sm text-primary"><i class="fa-solid fa-arrows-left-right me-1"></i> Geser untuk melihat lebih banyak</span></p>
+        
+        <!-- Container Horizontal Scroll -->
+        <div class="d-flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory hide-scrollbar text-start" style="scroll-behavior: smooth;">
+            
+            <!-- Sertifikat 1 -->
+            <div class="glass-card overflow-hidden group cursor-pointer p-3 d-flex flex-column flex-shrink-0 snap-center" style="width: 320px;">
+                <div class="overflow-hidden rounded-lg mb-3" style="height: 200px;">
+                    <img src="img/sertifikar_redhat.jpg" alt="Sertifikat 1" class="img-fluid w-100 h-100 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="mt-auto">
+                    <h4 class="h6 fw-bold mb-1 text-white">Sertifikat Dasar Pemrograman Python-RedHat</h4>
+                    <a href="img/sertifikar_redhat.jpg" class="btn btn-sm btn-outline-light rounded-pill w-100 hover:bg-white hover:text-black transition">Lihat Kredensial <i class="fa-solid fa-arrow-up-right-from-square ms-1 text-xs"></i></a>
+                </div>
+            </div>
+
+            <!-- Sertifikat 2 -->
+            <div class="glass-card overflow-hidden group cursor-pointer p-3 d-flex flex-column flex-shrink-0 snap-center" style="width: 320px;">
+                <div class="overflow-hidden rounded-lg mb-3" style="height: 200px;">
+                    <img src="img/sertifikat_dasar pemrograman web.jpg" alt="Sertifikat 2" class="img-fluid w-100 h-100 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="mt-auto">
+                    <h4 class="h6 fw-bold mb-1 text-white">Sertifikat Belajar Pemrograman Web-Dicoding</h4>
+                    <a href="img/sertifikat_dasar pemrograman web.jpg" class="btn btn-sm btn-outline-light rounded-pill w-100 hover:bg-white hover:text-black transition">Lihat Kredensial <i class="fa-solid fa-arrow-up-right-from-square ms-1 text-xs"></i></a>
+                </div>
+            </div>
+
+            <!-- Sertifikat 3 -->
+            <div class="glass-card overflow-hidden group cursor-pointer p-3 d-flex flex-column flex-shrink-0 snap-center" style="width: 320px;">
+                <div class="overflow-hidden rounded-lg mb-3" style="height: 200px;">
+                    <img src="img/sertifikat_berlajar Front-End Web Pemula.jpg" alt="Sertifikat 3" class="img-fluid w-100 h-100 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="mt-auto">
+                    <h4 class="h6 fw-bold mb-1 text-white">Front-End Web Pemula-Dicoding</h4>
+                    <a href="img/sertifikat_berlajar Front-End Web Pemula.jpg" class="btn btn-sm btn-outline-light rounded-pill w-100 hover:bg-white hover:text-black transition">Lihat Kredensial <i class="fa-solid fa-arrow-up-right-from-square ms-1 text-xs"></i></a>
+                </div>
+            </div>
+            
+            <!-- Sertifikat 4 -->
+            <div class="glass-card overflow-hidden group cursor-pointer p-3 d-flex flex-column flex-shrink-0 snap-center" style="width: 320px;">
+                <div class="overflow-hidden rounded-lg mb-3" style="height: 200px;">
+                    <img src="img/sertifikat_pengembangan diri.jpg" alt="Sertifikat 4" class="img-fluid w-100 h-100 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="mt-auto">
+                    <h4 class="h6 fw-bold mb-1 text-white">Sertifikat Pengembangan Diri-Dicoding</h4>
+                    <a href="img/sertifikat_pengembangan diri.jpg" class="btn btn-sm btn-outline-light rounded-pill w-100 hover:bg-white hover:text-black transition">Lihat Kredensial <i class="fa-solid fa-arrow-up-right-from-square ms-1 text-xs"></i></a>
+                </div>
+            </div>
+
+             <!-- Sertifikat 5 -->
+            <div class="glass-card overflow-hidden group cursor-pointer p-3 d-flex flex-column flex-shrink-0 snap-center" style="width: 320px;">
+                <div class="overflow-hidden rounded-lg mb-3" style="height: 200px;">
+                    <img src="img/sertifikat_financial.jpg" alt="Sertifikat 5" class="img-fluid w-100 h-100 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="mt-auto">
+                    <h4 class="h6 fw-bold mb-1 text-white">Sertifikat Introduction to Financial Literacy-Dicoding</h4>
+                    <a href="img/sertifikat_financial.jpg" class="btn btn-sm btn-outline-light rounded-pill w-100 hover:bg-white hover:text-black transition">Lihat Kredensial <i class="fa-solid fa-arrow-up-right-from-square ms-1 text-xs"></i></a>
+                </div>
+            </div>
+
+             <!-- Sertifikat 6 -->
+            <div class="glass-card overflow-hidden group cursor-pointer p-3 d-flex flex-column flex-shrink-0 snap-center" style="width: 320px;">
+                <div class="overflow-hidden rounded-lg mb-3" style="height: 200px;">
+                    <img src="img/sertifikat_dasar js.jpg" alt="Sertifikat 6" class="img-fluid w-100 h-100 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="mt-auto">
+                    <h4 class="h6 fw-bold mb-1 text-white">Sertifikat Belajar Dasar Pemrograman JavaScript-Dicoding</h4>
+                    <a href="img/sertifikat_dasar js.jpg" class="btn btn-sm btn-outline-light rounded-pill w-100 hover:bg-white hover:text-black transition">Lihat Kredensial <i class="fa-solid fa-arrow-up-right-from-square ms-1 text-xs"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container py-5 mt-5 text-center">
+        <h2 class="h3 fw-bold mb-2">Proyek Terpilih</h2>
+        <p class="text-gray-400 mb-5">Beberapa karya yang menyoroti keahlian saya.</p>
+        
+        <div class="row g-4 text-start">
+            <div class="col-md-6">
+                <div class="glass-card overflow-hidden h-100 group cursor-pointer">
+                    <img src="img/iot.jpg" alt="Project 1" class="img-fluid w-100 object-cover opacity-75 group-hover:opacity-100 transition duration-500" style="height: 250px;">
+                    <div class="p-4">
+                        <h4 class="h5 fw-bold mb-2">Proyek IoT</h4>
+                        <p class="text-sm text-gray-400 mb-3">Alat Pendeteksi Kebocoran Gas Menggunakan ESP32</p>
+                        <div class="d-flex gap-2 mb-3">
+                        </div>
+                        <a href="img/iot.webp" class="text-white text-decoration-none text-sm hover:text-primary transition">Lihat <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row g-4 h-100">
+                    <div class="col-12">
+                        <div class="glass-card overflow-hidden h-100 d-flex flex-column flex-md-row align-items-center p-3 group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Project 2" class="rounded-lg object-cover me-3 opacity-75 group-hover:opacity-100 transition" style="width: 150px; height: 100px;">
+                            <div>
+                                <h4 class="h6 fw-bold mb-1 mt-3 mt-md-0">Dashboard Analitik Data</h4>
+                                <p class="text-xs text-gray-400 mb-2">Dashboard interaktif untuk visualisasi data penjualan.</p>
+                                <a href="#" class="text-white text-decoration-none text-xs hover:text-primary transition">Lihat <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="glass-card overflow-hidden h-100 d-flex flex-column flex-md-row align-items-center p-3 group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Project 3" class="rounded-lg object-cover me-3 opacity-75 group-hover:opacity-100 transition" style="width: 150px; height: 100px;">
+                            <div>
+                                <h4 class="h6 fw-bold mb-1 mt-3 mt-md-0">Aplikasi Manajemen Proyek</h4>
+                                <p class="text-xs text-gray-400 mb-2">Platform kolaborasi tim dengan fitur real-time chat.</p>
+                                <a href="#" class="text-white text-decoration-none text-xs hover:text-primary transition">Lihat <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-5">
+            <button class="btn btn-outline-light rounded-pill px-4 py-2">Lihat Semua Proyek</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container py-5 mt-5 mb-5">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold mb-2">Mari Terhubung</h2>
+            <p class="text-gray-400">Saya selalu terbuka untuk proyek baru atau sekadar obrolan. Kirimkan sinyal Anda.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="glass-card p-4 p-md-5">
+                    <div class="row g-5">
+                        <div class="col-md-5 border-end border-gray-700">
+                            <div class="d-flex align-items-center gap-2 mb-4">
+                                <span class="position-relative flex h-3 w-3">
+                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                  <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                                </span>
+                                <span class="text-xs text-green-500 fw-bold tracking-widest">SYSTEM STATUS: ONLINE</span>
+                            </div>
+
+                            <div class="bg-black bg-opacity-25 rounded-xl p-3 mb-3 d-flex align-items-center gap-3 border border-gray-800">
+                                <div class="bg-gray-800 p-2 rounded text-white"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <p class="text-xs text-gray-500 mb-0">EMAIL ME</p>
+                                    <p class="text-sm text-gray-200 mb-0">adevito458@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-black bg-opacity-25 rounded-xl p-3 d-flex align-items-center gap-3 border border-gray-800">
+                                <div class="bg-gray-800 p-2 rounded text-white"><i class="fa-brands fa-whatsapp"></i></div>
+                                <div>
+                                    <p class="text-xs text-gray-500 mb-0">CHAT WHATSAPP</p>
+                                    <p class="text-sm text-gray-200 mb-0">+62 89682677783</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7">
+                            <h3 class="h6 text-white mb-4 d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-terminal text-primary"></i> INITIATE DATA TRANSMISSION
+                            </h3>
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label text-xs text-gray-400 ms-1"><i class="fa-regular fa-user me-1"></i> ID Pengirim / Nama</label>
+                                    <input type="text" class="form-control custom-input rounded-lg p-2" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-xs text-gray-400 ms-1"><i class="fa-regular fa-envelope me-1"></i> Frekuensi Email</label>
+                                    <input type="email" class="form-control custom-input rounded-lg p-2" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label text-xs text-gray-400 ms-1"><i class="fa-regular fa-comment-dots me-1"></i> Data Transmisi Pesan</label>
+                                    <textarea class="form-control custom-input rounded-lg p-2" rows="3" required></textarea>
+                                </div>
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-primary rounded-pill px-4 hover:bg-emerald-600 transition border-0">Kirim <i class="fa-solid fa-paper-plane ms-1"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="border-top mt-5 py-4" style="border-color: rgba(255,255,255,0.05) !important; background: rgba(0,0,0,0.2);">
+        <div class="container text-center text-md-start">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="text-gray-500 text-sm mb-0">&copy; 2026 Vito Ade Chrisnanta. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex justify-content-center justify-content-md-end gap-4">
+                        <a href="#" class="text-gray-500 hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-white transition"><i class="fa-brands fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
