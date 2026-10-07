@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Mengarahkan path spesifik ke folder portofoliomu
-          path: './web-portofolio-bootsrap'
+          path: './web-portofolio-bootstrap'
           
       - name: Deploy to GitHub Pages
         id: deployment
