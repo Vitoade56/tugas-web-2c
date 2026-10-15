@@ -19,23 +19,23 @@
             //mathod atau function
             this.Maju = function() {
                 document.write("kendaraan jenis "+ 
-                    this.jenis + "Bergerak Maju <br>");
+                    this.jenis + " Bergerak Maju <br> ");
             }
 
             this.Mundur = function() {
                 document.write("kendaraan jenis "+this.
-                    jenis + "Bergerak Mundur <br>")
+                    jenis + " Bergerak Mundur <br> ")
             }
 
-            this. Belok = function() {
+            this.Belok = function(arah) {
                 document.write("kendaraan jenis "+this.
-                    jenis + "Sedang Bergerak Ke " + arah +
+                    jenis + " Sedang Bergerak Ke " + arah +
                     "<br>");
             }
 
             this.Berhenti = function() {
                 document.write("kendaraan jenis "+ this.
-                jenis + "Sedang berhenti <br>");
+                jenis + " Sedang berhenti <br> ");
             }
         }
 
@@ -49,10 +49,10 @@
         document.write("<h3>Kendaran Beroda "+sepedamotor.roda+"</h3>");
  
         //memanggil fungsi
-        SepedaMotor.Belok("Kanan");
-        Sedan.Maju();
-        SepedaMotor.Mundur();
-        Sedan.Berhenti();
+        sepedamotor.Belok("Kanan");
+        sedan.Maju();
+        sepedamotor.Mundur();
+        sedan.Berhenti();
 
     </script>
 </body>
